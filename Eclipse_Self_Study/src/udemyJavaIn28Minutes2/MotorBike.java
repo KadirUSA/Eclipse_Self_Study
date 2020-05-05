@@ -2,53 +2,42 @@ package udemyJavaIn28Minutes2;
 
 public class MotorBike {
 
-	// ***state (what is the current situation a specific bike is in. Like I am
-	// driving
-	// ducati and my current speed is 60hpm)
+	private int speed; // a variable can be called from MotorBike class by object of "ducati" and
+						// "honda".
 
-	private int speed; // member variable (might be byte, short, int or long)
-						// other classes should not access to this class. That is why we added private
-						// before "int speed" How they can
-						// can access to this class? They can access by using method called
-						// "getSpeed()..
+	MotorBike(int speed) { // This a constructor class. The name of the constructor class must be the same
+							// name of class. you can use constractor class to initialize your method.
+							// Belirli bir deger ile baslatmak.
+		this.speed = speed;
+	}
 
-	public int getSpeed() {
+	MotorBike() {
+		this(15);
+		System.out.println("The second constructor speed will start soon");
+	}
 
-			return speed;
+	void start() { // a method
+
+		System.out.println("Bike has started");
 
 	}
 
-	// ***each objects have behavior
-	// *method
-	// input --> int speed
-	// output --> void
-	// name --> setSpeed
+	public int getSpeed() {
+		return this.speed;
+	}
 
-	// *** First Solution
-	public void setSpeed(int speed) {// local variable (degisken)
-		if (speed > 0) { // Protecting valuation from mines(-)
+	public void setSpeed(int speed) {
+		if (speed > 0) {
 			this.speed = speed;
 		}
 	}
 
-	// ***Second Solution instead of FlowersRunner class
 	public void increaseSpeed(int howMuch) {
 		setSpeed(this.speed + howMuch);
-
 	}
 
-	public void decreaseSpeed(int howMuch) {
+	public void dicreasSpeed(int howMuch) {
 		setSpeed(this.speed - howMuch);
-		{
-
-		}
-		
-	}
-
-	void start() {
-
-		System.out.println(" Bike started");
-
 	}
 
 }

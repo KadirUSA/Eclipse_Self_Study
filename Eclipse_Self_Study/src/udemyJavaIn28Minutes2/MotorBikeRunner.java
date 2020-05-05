@@ -3,42 +3,38 @@ package udemyJavaIn28Minutes2;
 public class MotorBikeRunner {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		MotorBike ducati = new MotorBike();
-		MotorBike honda = new MotorBike();
+		MotorBike ducati = new MotorBike(100); // call all methods from MotorBike class by "ducati" and honda.
+		MotorBike honda = new MotorBike(200); // you can add int value after creating a constructor method...
 
-		ducati.start();
-		honda.start();
+		System.out.println("Motorbike starting speed: " + ducati.getSpeed()); // for printing MotorBike constructor
+																				// class output...
 
-		ducati.setSpeed(100);
-		ducati.increaseSpeed(100); // *** Second Solution Increase
-		honda.setSpeed(80);
-		honda.increaseSpeed(80); // *** Second Solution Increase
+		MotorBike secondConstructor = new MotorBike(); // If you would like to create another constructor
+														// should first create a new constructor in class of MotorBike
+		secondConstructor.getSpeed();
 
-		ducati.decreaseSpeed(199);
-		honda.decreaseSpeed(10);
+		System.out.println(secondConstructor.getSpeed());
+
+		ducati.start(); // 1. will print this method. In MotorBike class under the method od "start" its
+						// written System.out.println("Bike has started");
+		// honda.start();
+
+		// ducati.setSpeed(100);
+		// System.out.println(ducati.getSpeed());
+
+		ducati.setSpeed(40); // you can also create a decrement of speed method inside of MotorBike class
+
+		/*
+		 * int ducatiSpeed = ducati.getSpeed(); ducatiSpeed = ducatiSpeed + 120;
+		 * ducati.setSpeed(ducatiSpeed); // I can do this increment inside of setter and
+		 * getter in MotorBike class by creating a increment method
+		 */
+
+		ducati.increaseSpeed(50);
+		ducati.dicreasSpeed(100);
 
 		System.out.println(ducati.getSpeed());
-		System.out.println(honda.getSpeed());
-
-
-		ducati.setSpeed(100); // *** First Solution
-
-		int ducatiSpeed = ducati.getSpeed();// get current ---ducati speed---
-		ducatiSpeed = ducatiSpeed + 100; // increase ---ducati speed--
-		ducati.setSpeed(ducatiSpeed); // set it to --ducati--
-		System.out.println(ducati.getSpeed());
-
-		honda.setSpeed(80); // *** First Solution
-
-		int hondaSpeed = honda.getSpeed();// get current honda speed
-		hondaSpeed = hondaSpeed + 100; // increase speed of honda
-		honda.setSpeed(hondaSpeed); // set it to honda
-		System.out.println(honda.getSpeed());
-
 
 	}
-
 }
-
