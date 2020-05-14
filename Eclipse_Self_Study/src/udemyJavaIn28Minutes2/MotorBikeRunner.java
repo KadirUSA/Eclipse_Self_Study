@@ -5,7 +5,8 @@ public class MotorBikeRunner {
 	public static void main(String[] args) {
 
 		MotorBike ducati = new MotorBike(100); // call all methods from MotorBike class by "ducati" and honda.
-		MotorBike honda = new MotorBike(200); // you can add int value after creating a constructor method...
+		// MotorBike honda = new MotorBike(200); // you can add int value after creating
+		// a constructor method...
 
 		System.out.println("Motorbike starting speed: " + ducati.getSpeed()); // for printing MotorBike constructor
 																				// class output...
